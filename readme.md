@@ -57,101 +57,66 @@ Ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/stock-price-view.git
+   git clone https://github.com/atul-007/stock-price-view.git
 
-### API Routes
+## Endpoints
 
-#### Get Top 10 Stocks
-
-**Request:**
-
-```bash
-curl http://localhost:8080/api/top10
-
-
-Response:
-
-[
-  {
-    "Code": "ABC123",
-    "Name": "Company ABC"
-    // Other fields...
-  },
-  // ... (up to 10 stocks)
-]
+- `GET /health`: Endpoin to check if the service is up and running or not .
+- `GET /top10stocks`: Endpoin to handle the request for getting the top 10 stocks.
+- `GET /stockbyname?name:{name of the stock}`: Endpoin to handle the reuest for  getting the stock by name.
+- `GET /stockpricehistory?code:{stock code}`: Endpoin to handle the reuest for  getting stock price history .
+- `GET /favouritestocks`: Endpoin to handle the reuest for  getting  your favourite stock .
 
 
-#### Find Stocks by Name
-**Request:**
-
-curl http://localhost:8080/api/stocks?name=Company
-
-
-**Response:**
-
-[
-  {
-    "Code": "ABC123",
-    "Name": "Company ABC"
-    // Other fields...
-  },
-  // ... (matching stocks)
-]
-
-
-Get Stock Price History
-**Request:**
-
-curl http://localhost:8080/api/history?code=ABC123
-
-
-Response:
-
-[
-  {
-    "Date": "2024-01-31",
-    "Price": 123.45
-    // Other fields...
-  },
-  // ... (historical data)
-]
-
-
-Add Stock to Favorites
-**Request:**
-
-curl -X POST -H "Content-Type: application/json" -d '{"code": "ABC123", "name": "Company ABC"}' http://localhost:8080/api/favorites
-
-Response:
-
+- `DELETE /removefromfavorites`: Endpoin to remove stocks from your favourites .
+Payload:
+  ```json
 {
-  "message": "Stock added to favorites successfully."
+        "Code": "974274",
+        "Name": "MSFL31022   ",
+        "Group": "F ",
+        "Type": "B",
+        "Open": 1140002,
+        "High": 1140002,
+        "Low": 1140002,
+        "Close": 1140002,
+        "Last": 1140002,
+        "PrevClose": 1139690,
+        "NoTrades": 1,
+        "NoOfShares": 4,
+        "NetTurnover": 4560008
+    
+
+}
+  ```
+
+
+- `POST /addtofavorites`: Endpoint to add a stock as favourite. Expects a JSON payload with the form response.
+
+Payload:
+  ```json
+   
+    {
+        "Code": "974274",
+        "Name": "MSFL31022   ",
+        "Group": "F ",
+        "Type": "B",
+        "Open": 1140002,
+        "High": 1140002,
+        "Low": 1140002,
+        "Close": 1140002,
+        "Last": 1140002,
+        "PrevClose": 1139690,
+        "NoTrades": 1,
+        "NoOfShares": 4,
+        "NetTurnover": 4560008
+    
+
 }
 
-See Favorite Stocks
-**Request:**
-
-curl http://localhost:8080/api/favorites
-
-Response:
-
-[
-  {
-    "Code": "ABC123",
-    "Name": "Company ABC"
-    // Other fields...
-  },
-  // ... (favorite stocks)
-]
+  ```
 
 
-Remove Stock from Favorites
-**Request:**
 
-curl -X DELETE http://localhost:8080/api/favorites?code=ABC123
 
-Response:
 
-{
-  "message": "Stock removed from favorites successfully."
-}

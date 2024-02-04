@@ -71,7 +71,6 @@ func GetStockPriceHistoryWithCache(ctx context.Context, cache *Cache, code strin
 	var convertedPriceHistory []models.StockPriceHistory
 	for _, entry := range priceHistory {
 		convertedEntry := models.StockPriceHistory{
-			// Assuming a similar structure for StockPriceHistory in both packages
 			Date:  entry.Date,
 			Price: entry.Price,
 			// Add other fields as needed

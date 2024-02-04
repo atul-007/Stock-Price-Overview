@@ -2,11 +2,9 @@ package api
 
 import "github.com/gorilla/mux"
 
-// SetupRoutes sets up the API routes
 func Router() *mux.Router {
 	router := mux.NewRouter()
 
-	// Define API routes
 	router.HandleFunc("/", Health).Methods("GET")
 	router.HandleFunc("/top10stocks", GetTop10StocksHandler).Methods("GET")
 	router.HandleFunc("/stockbyname", GetStockByNameHandler).Methods("GET")
