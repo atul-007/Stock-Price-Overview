@@ -70,25 +70,25 @@ Ensure you have the following installed:
 
 - `DELETE /removefromfavorites`: Endpoin to remove stocks from your favourites .
 Payload:
-  ```json
-{
-        "Code": "974274",
-        "Name": "MSFL31022   ",
-        "Group": "F ",
-        "Type": "B",
-        "Open": 1140002,
-        "High": 1140002,
-        "Low": 1140002,
-        "Close": 1140002,
-        "Last": 1140002,
-        "PrevClose": 1139690,
-        "NoTrades": 1,
-        "NoOfShares": 4,
-        "NetTurnover": 4560008
-    
+    ```json
+    {
+            "Code": "974274",
+            "Name": "MSFL31022   ",
+            "Group": "F ",
+            "Type": "B",
+            "Open": 1140002,
+            "High": 1140002,
+            "Low": 1140002,
+            "Close": 1140002,
+            "Last": 1140002,
+            "PrevClose": 1139690,
+            "NoTrades": 1,
+            "NoOfShares": 4,
+            "NetTurnover": 4560008
+        
 
-}
-  ```
+    }
+    ```
 
 
 - `POST /addtofavorites`: Endpoint to add a stock as favourite. Expects a JSON payload with the form response.
