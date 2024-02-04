@@ -81,13 +81,13 @@ Response:
 ]
 
 
-Find Stocks by Name
-Request:
+#### Find Stocks by Name
+**Request:**
 
 curl http://localhost:8080/api/stocks?name=Company
 
 
-Response:
+**Response:**
 
 [
   {
@@ -100,7 +100,7 @@ Response:
 
 
 Get Stock Price History
-Request:
+**Request:**
 
 curl http://localhost:8080/api/history?code=ABC123
 
@@ -118,7 +118,7 @@ Response:
 
 
 Add Stock to Favorites
-Request:
+**Request:**
 
 curl -X POST -H "Content-Type: application/json" -d '{"code": "ABC123", "name": "Company ABC"}' http://localhost:8080/api/favorites
 
@@ -129,7 +129,7 @@ Response:
 }
 
 See Favorite Stocks
-Request:
+**Request:**
 
 curl http://localhost:8080/api/favorites
 
@@ -146,7 +146,7 @@ Response:
 
 
 Remove Stock from Favorites
-Request:
+**Request:**
 
 curl -X DELETE http://localhost:8080/api/favorites?code=ABC123
 
